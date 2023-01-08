@@ -58,6 +58,7 @@ const LegBuilderComponent = () => {
       }
     );
     console.log(dataSet);
+    alert("Data added Successfully");
   };
 
   return (
@@ -127,7 +128,7 @@ const LegBuilderComponent = () => {
         })}
 
       {show && (
-        <div className={style.btnDiv}>
+        <div className={style.LegsLegItem}>
           <button
             className={`${style.btnPrimary} ${style.btn}`}
             onClick={onSubmitHandler}
