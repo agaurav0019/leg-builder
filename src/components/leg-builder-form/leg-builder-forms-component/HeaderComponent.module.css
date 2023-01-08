@@ -1,0 +1,55 @@
+.toggleContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+
+.toggleLabel{
+    display: inline-flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 14px;
+    text-align: center;
+    color: #3f3f3f;
+    margin-right: 8px;
+}
+
+.toggleInput{
+    display: none;
+}
+
+.toggleOption{
+    color: #3f3f3f!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 24px;
+    background: #fff;
+    border: 1px solid #f6f6f6;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.active{
+    color: #fff!important;
+    background: #375a9e;
+    border-color: #375a9e;
+}
+
+.toggleInputLabelLeft{
+    border-radius: 16px 0 0 16px;
+}
+
+.toggleInputLabelRight{
+    border-radius: 0 16px 16px 0;
+}

@@ -1,0 +1,74 @@
+.addLegsSection{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #efefef;
+}
+
+.addLegsLabel{
+    color: #3f3f3f;
+}
+
+.addLegsButton{
+    color: #375a9e;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.addLegsButtonactive{
+    opacity: 0.2;
+    color: #375a9e;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.LegsLegItem{
+    margin-top: 16px;
+    position: relative;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #efefef;
+}
+
+.cancelSvg{
+    position:absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.copySvg{
+    position: absolute;
+    top : 2rem;
+    right: 0;
+    border-radius: 50%;
+    background: white;
+    /* height: 24px;
+    width: 25px; */
+    text-align: center;
+}
+
+.legsCopyBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    top: 20px;
+    cursor: pointer;
+    position: absolute;
+    top : 2rem;
+    right: 0;
+}
