@@ -4,8 +4,7 @@ import styles from "./LegBuilderItems.module.css";
 
 const LegBuilderItems = (props) => {
   const [data, setData] = useState(props.data);
-  // console.log("builderItem:", data);
-  // console.log(data.Lots)
+
   useEffect(()=>{
     setData(props.data)
   },[props.data])
@@ -30,7 +29,7 @@ const LegBuilderItems = (props) => {
     } else {
       setData({ ...data, [fieldName]: e.target.value });
     }
-    console.log(data);
+    console.log("xyz",data);
   };
 
   return (

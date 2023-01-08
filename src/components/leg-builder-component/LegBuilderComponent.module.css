@@ -72,3 +72,33 @@
     top : 2rem;
     right: 0;
 }
+
+.btn{
+    min-width: 129px;
+    height: 28px;
+    border-radius: 17.5px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    width: fit-content;
+    padding: 0 1rem;
+}
+
+
+.btnPrimary{
+    background: #375a9e;
+    border: 1px solid #efefef;
+    color: white;
+
+}
+
+.btnDiv{
+    margin-left: 30rem;
+    margin-top: 5rem;
+}

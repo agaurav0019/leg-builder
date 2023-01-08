@@ -14,9 +14,7 @@ const LegBuilderComponent = () => {
   };
 
   const onAddLegHandler = (data, showSection) => {
-    console.log("asd", data);
     setDataSet([...dataSet, data]);
-    console.log("asdf", dataSet);
     setDisplaySection([...displaySection, showSection]);
     setShow(true);
   };
@@ -28,12 +26,39 @@ const LegBuilderComponent = () => {
     );
   };
 
-  const copyHandler =(idx) => {
-    const tempData = dataSet.filter((data, i)=> i=== idx);
+  const copyHandler = (idx) => {
+    const tempData = dataSet.filter((data, i) => i === idx);
     setDataSet(dataSet.concat(tempData));
-    const tempDisplay = displaySection.filter((data,i)=> i=== idx);
+    const tempDisplay = displaySection.filter((data, i) => i === idx);
     setDisplaySection(displaySection.concat(tempDisplay));
-  }
+  };
+
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+
+    const [Lots,PositionType,OptionType,ExpiryKind,EntryType,StrikeParameter,
+      EntryByClosestPremiumValue,] = dataSet
+
+    const res = await fetch(
+      "https://leg-builder-feature-default-rtdb.firebaseio.com/database.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Lots,
+          PositionType,
+          OptionType,
+          ExpiryKind,
+          EntryType,
+          StrikeParameter,
+          EntryByClosestPremiumValue,
+        }),
+      }
+    );
+    console.log(dataSet);
+  };
 
   return (
     <>
@@ -79,7 +104,12 @@ const LegBuilderComponent = () => {
                   fill="#F07777"
                 ></path>
               </svg>
-              <div className={style.legsCopyBtn} onClick={()=>{copyHandler(idx)}}>
+              <div
+                className={style.legsCopyBtn}
+                onClick={() => {
+                  copyHandler(idx);
+                }}
+              >
                 <svg
                   width="24"
                   height="24"
@@ -95,6 +125,17 @@ const LegBuilderComponent = () => {
             </div>
           );
         })}
+
+      {show && (
+        <div className={style.btnDiv}>
+          <button
+            className={`${style.btnPrimary} ${style.btn}`}
+            onClick={onSubmitHandler}
+          >
+            Submit
+          </button>
+        </div>
+      )}
     </>
   );
 };
