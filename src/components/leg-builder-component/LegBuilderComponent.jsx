@@ -36,8 +36,15 @@ const LegBuilderComponent = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
-    const [Lots,PositionType,OptionType,ExpiryKind,EntryType,StrikeParameter,
-      EntryByClosestPremiumValue,] = dataSet
+    const [
+      Lots,
+      PositionType,
+      OptionType,
+      ExpiryKind,
+      EntryType,
+      StrikeParameter,
+      EntryByClosestPremiumValue,
+    ] = dataSet;
 
     const res = await fetch(
       "https://leg-builder-feature-default-rtdb.firebaseio.com/database.json",
@@ -127,7 +134,7 @@ const LegBuilderComponent = () => {
           );
         })}
 
-      {show && (
+      {dataSet.length !== 0 && (
         <div className={style.LegsLegItem}>
           <button
             className={`${style.btnPrimary} ${style.btn}`}
