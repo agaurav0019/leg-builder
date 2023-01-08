@@ -66,6 +66,7 @@ const LegBuilderComponent = () => {
     );
     console.log(dataSet);
     alert("Data added Successfully");
+    setDataSet([]);
   };
 
   return (
